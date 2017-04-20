@@ -35,7 +35,7 @@
     //自定义UINavigationBar
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         // Uncomment to change the background color of navigation bar
-        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x66CC99)];//0x067AB5
+        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x0B8579)];//0x067AB5
         // Uncomment to change the color of back button
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
