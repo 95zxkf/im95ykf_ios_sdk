@@ -137,7 +137,7 @@
     //苹果官方规定除特定应用类型，如：音乐、VOIP类可以在后台运行，其他类型应用均不得在后台运行，所以在程序退到后台要执行logout登出，
     //离线消息通过服务器推送可接收到
     //在程序切换到前台时，执行重新登录，见applicationWillEnterForeground函数中
-    //[[AppKeFuLib sharedInstance] logout];
+    [[AppKeFuLib sharedInstance] logout];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -145,9 +145,9 @@
     NSLog(@"%@",@"WillEnterForeGround");
     //切换到前台重新登录
 //如果要启用ip服务器，请设置为TRUE,否则请设置为FALSE, 注意如果设置为TRUE,则客服端登录的时候也需要选择IP服务器
-  //[[AppKeFuLib sharedInstance] enableIPServerMode:FALSE];//务必在调用login接口之前调用
- // [[AppKeFuLib sharedInstance] loginWithAppkey:APP_KEY];
-  //[UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  [[AppKeFuLib sharedInstance] enableIPServerMode:FALSE];//务必在调用login接口之前调用
+  [[AppKeFuLib sharedInstance] loginWithAppkey:APP_KEY];
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
 }
 
@@ -158,8 +158,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
-     //[[AppKeFuLib sharedInstance] logout];
-    //QQ
+     [[AppKeFuLib sharedInstance] logout];
 }
 
 @end
